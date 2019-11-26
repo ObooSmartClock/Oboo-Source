@@ -1,0 +1,34 @@
+#!/bin/sh
+
+## General Oboo Smart Clock configuration
+
+device=$(ubus call system board | jsonfilter -e '@.model')
+if [ "$device" == "Oboo Smart Clock" ]; then
+	# disable ssh access for production device
+	/etc/init.d/dropbear disable && /etc/init.d/dropbear stop
+	# configure password for production device
+	sed -e 's/^root.*$/root:\$1\$FhvtWK1E\$k9VNrFBB02\/7K3d5XyLVS0:17780:0:99999:7:::/' -i /etc/shadow
+fi
+
+# require login for serial access
+uci -q batch <<-EOF > /dev/null
+        set system.@system[0].ttylogin='1'
+        commit system
+EOF
+
+# other actions
+# enable ntpd to run at boot
+/etc/init.d/sysntpd enable
+
+# modifications to rc.local
+echo "touch /tmp/setupMode
+/etc/init.d/sysntpd restart
+if [ ! -e /etc/config.json ]; then
+	touch /etc/config.json
+	echo '{"config":{}}' > /etc/config.json
+	/usr/bin/ort /usr/bin/js/updateConfig.js
+fi
+exit 0" > /etc/rc.local
+
+
+exit 0

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# enable CORS for ubus endpoints
+
+uci -q batch <<-EOF > /dev/null
+	set uhttpd.main.ubus_cors='1'
+	commit uhttpd
+EOF
+
+exit 0

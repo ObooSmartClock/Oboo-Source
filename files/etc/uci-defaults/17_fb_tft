@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# on first boot, update the fbtft module loadcd 
+
+echo "fbtft_device name=tm022hdh26 busnum=32766 cs=1 gpios=dc:11,reset:14 speed=98985984 txbuflen=153600" > /etc/modules.d/06-fb-tft
+
+exit 0

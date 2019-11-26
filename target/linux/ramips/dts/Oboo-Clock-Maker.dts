@@ -1,0 +1,30 @@
+/dts-v1/;
+
+#include "OMEGA2.dtsi"
+
+/ {
+	model = "Oboo Maker Clock";
+
+	memory@0 {
+		device_type = "memory";
+		reg = <0x0 0x8000000>;
+	};
+};
+
+&firmware {
+	reg = <0x50000 0x1fb0000>;
+};
+
+&system_led {
+	label = "oboo-maker-clock:amber:system";
+};
+
+&pinctrl {
+	state_default: pinctrl0 {
+		pwm0 {
+			ralink,group = "pwm0";
+			ralink,function = "pwm";
+		};
+	};
+};
+

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# on first boot, flash the microcontroller!
+
+sh /usr/bin/mcu/flash.hex 
+
+exit 0

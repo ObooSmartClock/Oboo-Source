@@ -1,0 +1,10 @@
+{
+        "version": "1.0.0",
+        "system": "openwrt",
+        "core": "oboo-smart-clock",
+        "device": "oboo",
+        "devices": [
+                {"name":"oboo-maker-clock","symbol":"oboo-maker-clock"}
+        ]
+}
+
