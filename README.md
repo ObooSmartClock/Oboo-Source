@@ -10,6 +10,13 @@ This buildsystem for the [LEDE Linux distribution](./LEDE-README.md) has been mo
 * See `CHANGELOG.md` for a listing of the changes for each firmware version and build
 * See `DISCLAIMER.md` for Onion's disclaimer regarding this build system
 
+# Using this Build System
+
+This buildsystem can be used to create packages and firmware for the Oboo Smart Clock. There are two preferred ways to use the buildsystem:
+
+1. Creating and using the Docker image **Recommended method**
+2. Running the build system on a Linux system
+
 ## Using the Docker Image
 
 The Docker image takes care of all environmental configuration and is the recommended method.Using this method creates a Docker image that can be used to compile the Oboo Smart Clock build system
