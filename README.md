@@ -109,3 +109,9 @@ To setup and compile the build system, run the following command:
 ```
 sh build.sh
 ```
+
+# Automatic Deployments
+
+Each time a commit or Pull Request is pushed to the `master` branch, the CD system will be **automatically** triggered to compile the build system.
+
+The output ipk files from `bin/packages/mipsel_24kc/oboo/` will be made **automatically** available at: http://repo.getoboo.com/oboo-clock/packages/latest/
