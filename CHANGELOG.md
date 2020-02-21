@@ -38,6 +38,10 @@ Development versions of all Oboo software
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### Feb 21, 2020
+
+* Building packages with all updates to Oboo-Packages up to commit [5f4d944](https://github.com/ObooSmartClock/Oboo-Packages/commit/5f4d944f69f3be8f43362cb7ec71791edecabf23)
+
 #### b122
 *June 20, 2019*
 
