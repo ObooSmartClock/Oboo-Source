@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:18.04
 # Creates a Docker image that can be used to compile the Oboo Smart Clock build system
 # See this link for more details: https://docs.docker.com/get-started/part2/
 

@@ -40,19 +40,19 @@ git clone git@github.com:ObooSmartClock/Oboo-Source.git
 ```
 cd Oboo-Source
 ```
-3.  Build and tag the docker image by running: 
+3.  Build and tag the docker image by running:
 ```
-docker build -t oboo-source/oboo-source -f Dockerfile
+docker build -t oboo-source/oboo-source -f Dockerfile .
 ```
 
 This will produce a docker image with the following artifacts:
 
 * Firmware binaries:
-	* Location: `bin/targets/ramips/mt7688/`
-	* For Example: `bin/targets/ramips/mt7688/lede-ramips-mt7688-oboo-smart-clock-squashfs-sysupgrade.bin`
+  * Location: `bin/targets/ramips/mt7688/`
+  * For Example: `bin/targets/ramips/mt7688/lede-ramips-mt7688-oboo-smart-clock-squashfs-sysupgrade.bin`
 * Oboo package files
-	* Location: `bin/packages/mipsel_24kc/oboo/`
-	* For Example: `bin/packages/mipsel_24kc/oboo/oboo-clock-base_0.0.8-4_mipsel_24kc.ipk`
+  * Location: `bin/packages/mipsel_24kc/oboo/`
+  * For Example: `bin/packages/mipsel_24kc/oboo/oboo-clock-base_0.0.8-4_mipsel_24kc.ipk`
 
 ## Using the Output Files
 
@@ -61,7 +61,7 @@ To access the the built artifacts, run and mount the docker image to your local 
 ```
 docker run oboo-source/oboo-source \
       -v ~source:bin/targets \
-      -v ~packages:bin/packages \ 
+      -v ~packages:bin/packages \
       -it /bin/bash
 ```
 
@@ -69,7 +69,7 @@ docker run oboo-source/oboo-source \
 
 **Oboo package files** can be installed on Oboo Smart Clock. Transfer the desired `*.ipk` file to the target Oboo Smart Clock's filesystem, and use `opkg install <IPK NAME HERE>` to install/update the package.
 
-## Building Locally 
+## Building Locally
 
 This procedure must be done on an Ubuntu system, as it requires specific software packages in order for the build to succeed.
 System requirements for running this build system are similar to the Docker method:
